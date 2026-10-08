@@ -6,7 +6,7 @@ services:
     stop_grace_period: 30s
     ports:
       - target: 9090
-        published: "9090"
+        published: "9196"
         protocol: tcp
     sysctls:
       net.ipv4.ping_group_range: "0 2147483647"
@@ -31,7 +31,7 @@ x-casaos:
   id: com.projecthelena.warden
   main: warden
   index: /
-  port_map: "9090"
+  port_map: "9196"
   scheme: http
   icon: https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Warden/icon.svg
   screenshot_link:
@@ -58,9 +58,9 @@ x-casaos:
   tips:
     before_install:
       en_US: |-
-        Uses port 9090. Create your administrator account on first launch. Back up the Docker volume mounted at /data; it is not stored under /DATA/AppData. Removing the volume deletes the database. For HTTPS behind a trusted reverse proxy, see the configuration guide for COOKIE_SECURE and TRUST_PROXY.
+        Uses port 9196. Create your administrator account on first launch. Back up the Docker volume mounted at /data; it is not stored under /DATA/AppData. Removing the volume deletes the database. For HTTPS behind a trusted reverse proxy, see the configuration guide for COOKIE_SECURE and TRUST_PROXY.
       es_ES: |-
-        Usa el puerto 9090. Crea tu cuenta de administrador al abrir la aplicación. Respalda el volumen Docker montado en /data; no se guarda en /DATA/AppData. Eliminar el volumen borra la base de datos. Para usar HTTPS detrás de un proxy de confianza, consulta COOKIE_SECURE y TRUST_PROXY en la guía de configuración.
+        Usa el puerto 9196. Crea tu cuenta de administrador al abrir la aplicación. Respalda el volumen Docker montado en /data; no se guarda en /DATA/AppData. Eliminar el volumen borra la base de datos. Para usar HTTPS detrás de un proxy de confianza, consulta COOKIE_SECURE y TRUST_PROXY en la guía de configuración.
   author: JesusPaz
   developer: Project Helena
   category: Networking
@@ -68,6 +68,10 @@ x-casaos:
     - amd64
     - arm64
   version: "0.9.0"
+  update_at: "2026-10-08"
+  release_notes:
+    en_US: Initial store package for Warden 0.9.0 with SQLite and persistent storage.
+    es_ES: Paquete inicial de Warden 0.9.0 con SQLite y almacenamiento persistente.
   website: https://projecthelena.com/
   repo: https://github.com/projecthelena/warden
   support: https://github.com/projecthelena/warden/issues
